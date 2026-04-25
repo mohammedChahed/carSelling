@@ -14,7 +14,7 @@
                         <!-- Found Cars Counter -->
                         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                             <p class="text-sm text-gray-600">Found</p>
-                            <p class="text-2xl font-bold text-blue-600">1,240</p>
+                            <p class="text-2xl font-bold text-blue-600">{{ $carCount }}</p>
                             <p class="text-xs text-gray-500">cars</p>
                         </div>
 
@@ -102,120 +102,12 @@
                     <!-- Car Cards Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         
-                        <!-- Card 1 -->
-                        <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition">
-                            <!-- Image -->
-                            <div class="relative bg-gray-200 h-48 overflow-hidden">
-                                <img src="https://via.placeholder.com/400x300?text=2016+Lexus+RX200t" alt="Car" class="w-full h-full object-cover">
-                                <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition">
-                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!-- Content -->
-                            <div class="p-4">
-                                <p class="text-sm text-gray-500 mb-1">New Jersey</p>
-                                <h3 class="text-lg font-semibold text-gray-800 mb-2">2016 - Lexus RX200t</h3>
-                                <p class="text-2xl font-bold text-blue-600 mb-4">$25,000</p>
-
-                                <!-- Badges -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">SUV</span>
-                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Gasoline</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition">
-                            <!-- Image -->
-                            <div class="relative bg-gray-200 h-48 overflow-hidden">
-                                <img src="https://via.placeholder.com/400x300?text=2018+Honda+Civic" alt="Car" class="w-full h-full object-cover">
-                                <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition">
-                                    <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!-- Content -->
-                            <div class="p-4">
-                                <p class="text-sm text-gray-500 mb-1">Los Angeles</p>
-                                <h3 class="text-lg font-semibold text-gray-800 mb-2">2018 - Honda Civic</h3>
-                                <p class="text-2xl font-bold text-blue-600 mb-4">$18,500</p>
-
-                                <!-- Badges -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Sedan</span>
-                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Hybrid</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition">
-                            <!-- Image -->
-                            <div class="relative bg-gray-200 h-48 overflow-hidden">
-                                <img src="https://via.placeholder.com/400x300?text=2020+Ford+F-150" alt="Car" class="w-full h-full object-cover">
-                                <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition">
-                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!-- Content -->
-                            <div class="p-4">
-                                <p class="text-sm text-gray-500 mb-1">Houston</p>
-                                <h3 class="text-lg font-semibold text-gray-800 mb-2">2020 - Ford F-150</h3>
-                                <p class="text-2xl font-bold text-blue-600 mb-4">$32,800</p>
-
-                                <!-- Badges -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Pickup Truck</span>
-                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Diesel</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition">
-                            <!-- Image -->
-                            <div class="relative bg-gray-200 h-48 overflow-hidden">
-                                <img src="https://via.placeholder.com/400x300?text=2021+Tesla+Model+3" alt="Car" class="w-full h-full object-cover">
-                                <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition">
-                                    <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <!-- Content -->
-                            <div class="p-4">
-                                <p class="text-sm text-gray-500 mb-1">San Francisco</p>
-                                <h3 class="text-lg font-semibold text-gray-800 mb-2">2021 - Tesla Model 3</h3>
-                                <p class="text-2xl font-bold text-blue-600 mb-4">$42,000</p>
-
-                                <!-- Badges -->
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Sedan</span>
-                                    <span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Electric</span>
-                                </div>
-                            </div>
-                        </div>
-
+                       @foreach ($cars as $car )
+                           <x-card-item :$car/>
+                       @endforeach
                     </div>
 
-                    <!-- Pagination -->
-                    <div class="flex justify-center items-center gap-2 mt-8">
-                        <button class="px-4 py-2 border border-slate-200 rounded-lg text-gray-700 hover:bg-gray-50">← Prev</button>
-                        <button class="px-3 py-2 bg-blue-600 text-white rounded-lg">1</button>
-                        <button class="px-3 py-2 border border-slate-200 rounded-lg text-gray-700 hover:bg-gray-50">2</button>
-                        <button class="px-3 py-2 border border-slate-200 rounded-lg text-gray-700 hover:bg-gray-50">3</button>
-                        <button class="px-4 py-2 border border-slate-200 rounded-lg text-gray-700 hover:bg-gray-50">Next →</button>
-                    </div>
+                    
 
                 </main>
 

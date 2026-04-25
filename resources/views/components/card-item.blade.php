@@ -2,7 +2,7 @@
     
     <article class="card" data-make="BMW" data-model="X5" data-state="New York" data-city="Newark" data-type="SUV" data-fuel="Hybrid" data-year="2021" data-price="38000">
         <div class="card-media">
-            <a href="{{ route('show', $car) }}">
+            <a href="{{ route('carDetail.show', $car->id) }}">
                 <img
                     src="{{ $car->carImage->image_path}}"
                     alt="BMW X5"

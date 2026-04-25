@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
-    public function show(Car $car)
+    public function carDetail($id)
     {
-        
-        return view('cars/show',);
+        $cars = Car::findOrFail($id) ;
+        return view('cars/carDetail', ['cars'=>$cars]);
     }
     public function create(Car $car)
     {
@@ -18,7 +19,11 @@ class CarController extends Controller
     }
     public function cars(Car $car)
     {
-        return view('cars/cars');
+        $cars = User::find(1)
+        ->cars()
+        ->latest()
+        ->get() ;
+        return view('cars/cars' , ['cars'=>$cars]);
     }
     public function update(Request $request, Car $car)
     {
@@ -29,7 +34,14 @@ class CarController extends Controller
         
     }
     public function search() {
-        return view('cars.search');
+
+        $query = Car::where('published_at' , '<' , now()) ;
+
+        $carCount =$query->count() ; 
+        
+        $cars =$query->limit(30)->get();
+
+        return view('cars.search' , ['cars' => $cars , 'carCount' => $carCount]);
     }
 }
 
