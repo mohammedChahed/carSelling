@@ -14,7 +14,7 @@
                         <!-- Found Cars Counter -->
                         <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                             <p class="text-sm text-gray-600">Found</p>
-                            <p class="text-2xl font-bold text-blue-600">{{ $carCount }}</p>
+                            <p class="text-2xl font-bold text-blue-600">{{ $cars->total() }}</p>
                             <p class="text-xs text-gray-500">cars</p>
                         </div>
 
@@ -105,7 +105,57 @@
                        @foreach ($cars as $car )
                            <x-card-item :$car/>
                        @endforeach
-                    </div>
+                     </div>
+
+                     <!-- Pagination -->
+                     <div class="mt-8 flex flex-col items-center gap-4">
+                        <!-- Pagination Links -->
+                        <nav class="flex items-center gap-3" aria-label="Pagination">
+                            <!-- Previous Button -->
+                            @if ($cars->onFirstPage())
+                                <button disabled class="text-gray-300 cursor-not-allowed" aria-label="Previous page">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    </svg>
+                                </button>
+                            @else
+                                <a href="{{ $cars->previousPageUrl() }}" class="text-gray-400 hover:text-gray-600 transition" aria-label="Previous page">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    </svg>
+                                </a>
+                            @endif
+
+                            <!-- Page Numbers -->
+                            <div class="flex items-center gap-2">
+                                @foreach ($cars->getUrlRange(max(1, $cars->currentPage() - 1), min($cars->lastPage(), $cars->currentPage() + 1)) as $page => $url)
+                                    @if ($page == $cars->currentPage())
+                                        <button class="w-8 h-8 rounded-full bg-orange-500 text-white font-medium text-sm flex items-center justify-center" aria-current="page">{{ $page }}</button>
+                                    @else
+                                        <a href="{{ $url }}" class="w-8 h-8 text-gray-500 hover:text-gray-700 font-medium text-sm flex items-center justify-center transition">{{ $page }}</a>
+                                    @endif
+                                @endforeach
+                            </div>
+
+                            <!-- Next Button -->
+                            @if ($cars->hasMorePages())
+                                <a href="{{ $cars->nextPageUrl() }}" class="text-gray-400 hover:text-gray-600 transition" aria-label="Next page">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            @else
+                                <button disabled class="text-gray-300 cursor-not-allowed" aria-label="Next page">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            @endif
+                        </nav>
+
+                        <!-- Bottom Line -->
+                        <div class="w-full h-1 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 rounded"></div>
+                     </div>
 
                     
 

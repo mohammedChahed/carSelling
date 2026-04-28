@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Maker extends Model
 {
@@ -15,6 +15,10 @@ class Maker extends Model
 
     public function models() {
         return $this->hasMany(Models::class);
+    }
+    public function cars() 
+    {
+        return $this->hasMany(Car::class) ;
     }
 
     

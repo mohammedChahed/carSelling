@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cars', function (Blueprint $table) {
-            $table->id(); // BIGINT UNSIGNED تلقائياً
+            $table->id(); // BIGINT UNSIGNED 
             $table->foreignId('maker_id')->constrained('makers');
             $table->foreignId('model_id')->constrained('models');
             $table->integer('year');

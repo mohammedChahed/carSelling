@@ -71,5 +71,9 @@ class Car extends Model
     {
         return $this->belongsTo(City::class, 'city_id');   
     }
+    public function maker() : BelongsTo
+    {
+        return $this->belongsTo(Maker::class , 'maker_id' ) ;
+    }
     
 }

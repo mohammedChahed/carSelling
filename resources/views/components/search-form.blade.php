@@ -94,7 +94,7 @@
 
             <div class="filter-actions">
               <button id="resetBtn" class="btn btn-soft" type="button">Reset</button>
-              <button class="btn btn-primary btn-wide" type="submit">Search</button>
+              <a href="{{ route('search') }}" class="btn btn-primary btn-wide" type="submit">Search</a>
             </div>
           </div>
         </form>
