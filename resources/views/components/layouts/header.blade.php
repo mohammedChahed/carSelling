@@ -13,9 +13,17 @@
             Add new Car
           </button>
         </a>
-
-        <a class="btn btn-primary" href="{{ route('signup') }}">Signup</a>
-        <a class="link" href="{{ route('signin') }}">Login</a>
+        @guest
+          <a class="btn btn-primary" href="{{ route('signup') }}">Signup</a>
+          <a class="link" href="{{ route('signin') }}">Login</a>
+        @endguest
+        @auth
+          <form action="/logout" method="POST">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-pill btn-ghost ">Log Out</button>
+          </form>
+        @endauth
       </nav>
     </div>
   </header>

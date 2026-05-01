@@ -21,7 +21,7 @@
                     <div class="w-full max-w-md">
                         <h1 class="text-4xl font-extrabold text-slate-900 mb-8 text-center lg:text-left">Login</h1>
 
-                        <form method="POST" action="#" autocomplete="on" class="space-y-4">
+                        <form method="POST" action="/signin" autocomplete="on" class="space-y-4">
                             @csrf
 
                             <div>
@@ -35,6 +35,7 @@
                                     required
                                 />
                             </div>
+                            <x-form-error name="email" />
 
                             <div>
                                 <input
@@ -46,7 +47,7 @@
                                     required
                                 />
                             </div>
-
+                            <x-form-error name="password" />
                             <div class="flex justify-end">
                                 <a class="text-sm font-semibold text-[#e65100] hover:text-[#d34900] transition-colors" href="#">Reset Password</a>
                             </div>
@@ -68,7 +69,7 @@
 
                             <div class="pt-6 text-center text-sm text-slate-500">
                                 <span>Don't have an account? </span>
-                                <a class="font-bold text-[#e65100] hover:underline decoration-2 underline-offset-4" href="#">Create an account</a>
+                                <a class="font-bold text-[#e65100] hover:underline decoration-2 underline-offset-4" href="{{ route('signup') }}">Create an account</a>
                             </div>
                         </form>
                     </div>
