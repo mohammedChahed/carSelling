@@ -13,8 +13,8 @@ Car Selling is a Laravel-based car marketplace project focused on browsing, sear
 
 ## Tech Stack
 
-- PHP 8.2+
-- Laravel 12
+- PHP 8.3+
+- Laravel 13
 - Vite
 - Tailwind CSS 4
 - PHPUnit 11
